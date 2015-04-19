@@ -29,4 +29,13 @@ Modules installed
 * git
 * mysql
 * php5
-* 
+    - php-pear
+    - php5-cli
+    - php5-gd
+    - php5-fpm
+    - php5-mysql
+    - php5-imagick
+    - php5-redis
+    - php5-curl
+    - php5-intl
+* redis
