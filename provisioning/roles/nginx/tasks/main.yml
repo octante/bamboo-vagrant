@@ -1,0 +1,30 @@
+---
+# install nginx and restart
+
+- name: install nginx
+  apt: name=nginx state=latest update_cache=true
+  notify:
+    - start nginx
+
+- name: Nginx | Disable the default site
+  file:
+    path: "/etc/nginx/sites-enabled/default"
+    state: absent
+  notify:
+    - reload nginx
+
+- name: copy virtualhost to available sites
+  template:
+    src=symfony_dev_site.conf.j2
+    dest=/etc/nginx/sites-available/{{ project_name }}.conf
+    owner=root
+    mode=0644
+  notify:
+    - reload nginx
+
+- name: Create symlink to project
+  file: 
+    src=/etc/nginx/sites-available/{{ project_name}}.conf
+    dest=/etc/nginx/sites-enabled/{{ project_name }}.conf
+    state=link
+  notify: reload nginx

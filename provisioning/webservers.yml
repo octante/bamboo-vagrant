@@ -1,0 +1,12 @@
+---
+# Ansible playbook to install a lamp server
+
+- hosts: shopping
+
+  roles:
+    - nginx
+    - mysql
+    - php5
+    - git
+    - redis
+    - composer

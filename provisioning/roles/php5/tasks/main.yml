@@ -1,0 +1,23 @@
+---
+- name: Upgrade php56 repository
+  # Add specified repository into sources list.
+  apt_repository: repo='ppa:ondrej/php5-5.6'
+
+- name: install php56 
+  # Install resources
+  apt: name=php5 state=latest update_cache=true
+  notify:
+    - restart php-fpm
+
+- name: install php5 dependencies
+  apt: name={{ item }} state=latest update_cache=true
+  with_items:
+    - php-pear
+    - php5-cli
+    - php5-gd
+    - php5-fpm
+    - php5-mysql
+    - php5-imagick
+    - php5-redis
+    - php5-curl
+    - php5-intl
