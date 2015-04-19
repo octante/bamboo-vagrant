@@ -28,6 +28,7 @@ Modules installed
 * composer
 * git
 * mysql
+* nginx
 * php5
     - php-pear
     - php5-cli
