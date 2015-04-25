@@ -1,0 +1,11 @@
+---
+# install sqlite
+
+- name: sqlite install
+  apt: pkg=sqlite3 state=latest
+
+- name: libsqlite3-dev install
+  apt: pkg=libsqlite3-dev state=latest
+
+- name: php5-sqlite install
+  apt: pkg=php5-sqlite state=latest

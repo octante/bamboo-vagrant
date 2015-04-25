@@ -20,7 +20,7 @@ To create virtual machine:
 To only provisioning virtual machine:
 
 	vagrant provision
-	
+
 
 Modules installed
 -----------------
@@ -40,3 +40,7 @@ Modules installed
     - php5-curl
     - php5-intl
 * redis
+* sqlite
+* npm
+* ruby
+* grunt

@@ -1,6 +1,10 @@
 ---
 # install redis
 
+- name: Upgrade redis repository
+  # Add specified repository into sources list.
+  apt_repository: repo='ppa:chris-lea/redis-server'
+
 - name: redis install
   apt: pkg=redis-server state=latest update_cache=true
   notify:

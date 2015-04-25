@@ -1,0 +1,5 @@
+---
+# install npm
+
+- name: npm install
+  apt: pkg=npm state=latest

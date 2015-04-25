@@ -10,3 +10,7 @@
     - git
     - redis
     - composer
+    - sqlite
+    - npm
+    - ruby
+    - grunt

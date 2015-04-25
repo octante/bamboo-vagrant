@@ -1,0 +1,44 @@
+---
+# install ruby dependencies
+
+- name: ruby-dev install
+  apt: pkg=ruby-dev state=latest
+  tags: 
+  	- test
+  	- development
+
+- name: rubygems-update install
+  gem: name=rubygems-update state=latest
+  tags: 
+  	- test
+  	- development
+
+- name: update gems
+  command: update_rubygems
+  tags: 
+  	- test
+  	- development
+
+- name: sass install
+  gem: name=sass state=latest
+  tags:
+  	- test
+  	- development
+
+- name: sass install
+  gem: name=sass state=latest
+  tags: 
+  	- test
+  	- development
+
+- name: compass install
+  gem: name=compass state=latest
+  tags: 
+  	- test
+  	- development
+
+- name: susy install
+  gem: name=susy state=latest
+  tags: 
+  	- test
+  	- development

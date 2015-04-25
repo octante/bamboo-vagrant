@@ -2,12 +2,15 @@
 # install mysql-server
 
 - name: install mysql
-  apt: pkg=mysql-server state=latest update_cache=true
+  apt: pkg=mysql-server state=latest
   notify:
     - start mysql-server
 
 - name: install python-mysqldb
   apt: pkg=python-mysqldb state=installed
+
+- name: open remote connections
+  ini_file: dest=/etc/mysql/my.cnf option=bind_ip value= backup=yes
 
 #- name: update mysql root password for all root accounts
 #  mysql_user: name=root password=1234 priv=*.*:ALL
