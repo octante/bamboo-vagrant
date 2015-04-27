@@ -7,8 +7,8 @@
 - name: rubygems-update install
   gem: name=rubygems-update state=latest
 
-- name: update gems
-  command: update_rubygems
+#- name: update gems
+#  command: update_rubygems
 
 - name: sass install
   gem: name=sass state=latest

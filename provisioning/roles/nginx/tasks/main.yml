@@ -2,7 +2,7 @@
 # install nginx and restart
 
 - name: install nginx
-  apt: name=nginx state=latest
+  apt: name=nginx state=latest update_cache=true
   notify:
     - start nginx
 
